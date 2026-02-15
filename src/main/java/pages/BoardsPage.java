@@ -23,10 +23,21 @@ public class BoardsPage extends BasePage{
     @FindBy(xpath = "//button[@data-testid='create-board-submit-button']")
     WebElement btnCreateNewBoardSubmit;
 
+    @FindBy(xpath = "//*[@title='OksanaShor (oksanashor)']")
+    WebElement btnAccount;
+
+    @FindBy(xpath = "//a[@data-testid='manage-account-link']")
+    WebElement btnManageAccountLink;
+
     public void createNewBoard(Board board){
         btnCreateNewBoard.click();
         inputBoardTitle.sendKeys(board.getBoardTitle());
         clickWait(btnCreateNewBoardSubmit, 5);
+    }
+
+    public void openMyAccount(){
+        clickWait(btnAccount, 5);
+        clickWait(btnManageAccountLink, 5);
     }
 
 }

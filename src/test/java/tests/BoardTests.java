@@ -27,4 +27,11 @@ public class BoardTests extends AppManager {
         new MyBoardPage(getDriver()).validateBoardName(board.getBoardTitle(), 5);
     }
 
+    @Test
+    public void check(){
+        new BoardsPage(getDriver()).openMyAccount();
+    }
+
+
+
 }
