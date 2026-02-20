@@ -1,9 +1,12 @@
 package tests;
 
+import data_provider.BoardDP;
 import dto.Board;
 import dto.User;
+import io.opentelemetry.sdk.metrics.data.Data;
 import manager.AppManager;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.BoardsPage;
 import pages.HomePage;
@@ -31,6 +34,12 @@ public class BoardTests extends AppManager {
     public void check(){
         new BoardsPage(getDriver()).openMyAccount();
     }
+
+    @Test(dataProvider = "dataProviderBoards", dataProviderClass = BoardDP.class)
+    public void createNewBoardPositiveTest_FromDP(Board board){
+        new BoardsPage(getDriver()).createNewBoard(board);
+    }
+
 
 
 
