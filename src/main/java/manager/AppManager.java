@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import java.time.Duration;
 
 public class AppManager {
-    public Logger logger = LoggerFactory.getLogger(AppManager.class);
+    public final static Logger logger = LoggerFactory.getLogger(AppManager.class);
 
     private WebDriver driver;
 
