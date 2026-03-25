@@ -28,7 +28,3 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew clean smoketests
-
-      git add .
-      git commit -m "run smoke tests"
-      git push origin master
