@@ -2,24 +2,29 @@ name: Smoke tests
 
 on:
  push:
-  branches:["master"]
+  branches: ["master"]
 
 jobs:
  test:
-  runs-on:windows-latest
+  runs-on: windows-latest
   permissions:
-   contents:read
+   contents: read
+
   steps:
-   -name:Checkout repository
-    uses:actions/checkout@v4
-   -name:Set up JDK 17
-    uses:actions/setup-java@v4
-    with:
-     java-version: '17'
-     distribution: 'temurin'
-   -name:Install chrome
-    uses:browser-actions/setup-chrome@latest
-   -name:Setup Gradle
-    uses:gradle/actions/setup-gradle@v4
-   -name:Build with Gradle Wrapper
-    run:./gradlew clean smoketests
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+       java-version: '17'
+       distribution: 'temurin'
+
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@latest
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+
+    - name: Build with Gradle Wrapper
+      run: gradlew clean smoke_tests
