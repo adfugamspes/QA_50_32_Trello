@@ -7,11 +7,13 @@ import io.opentelemetry.sdk.metrics.data.Data;
 import manager.AppManager;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.BoardsPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.MyBoardPage;
+import utils.TestNGListener;
 
 public class BoardTests extends AppManager {
 
